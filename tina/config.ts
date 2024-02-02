@@ -192,6 +192,47 @@ export default defineConfig({
           },
         ]
       },
+      {
+        name: 'nav',
+        label: 'Nav',
+        path: 'content/nav',
+        format: 'md',
+        ui: {
+          // evita alterações na collection
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+          // não aparece na raiz da visualização de blocos
+          global: true,
+        },
+        fields: [
+          {
+            name: 'links',
+            label: 'Links',
+            type: 'object',
+            list: true,
+            ui: {
+              itemProps: item => {
+                return {label: item.label}
+              },
+            },
+            fields: [
+              {
+                type: 'string',
+                name: 'label',
+                label: 'Label'
+              },
+              // TODO: converter para usar referências de páginas
+              {
+                type: 'string',
+                name: 'link',
+                label: 'Link'
+              }
+            ]
+          },
+        ]
+      },
     ],
   },
 })

@@ -24,5 +24,8 @@ blocks:
         label: My feature label
         description: My feature description
     _template: featureList
+  - label: Something really good
+    featuredPost: content/posts/introducing-llama-link.md
+    _template: featuredReading
 ---
 

@@ -21,10 +21,13 @@ export function PageComponent(props: {
   return (
     <>
       <SiteHeader />
-      {data.page.blocks?.map((block) => {
+      {data.page.blocks?.map((block, i) => {
         switch (block?.__typename) {
           case "PageBlocksWelcomeHero": {
             return <WelcomeHero {...block} />
+          }
+          case 'PageBlocksFeatureList': {
+            return <FeatureList key={i} {...block} />
           }
         }
       })}

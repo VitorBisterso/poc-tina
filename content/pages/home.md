@@ -10,4 +10,19 @@ blocks:
         label: Learn More
         style: simple
     _template: welcomeHero
+  - byline: asdasdas
+    message: |
+      My feature **list**
+    features:
+      - icon: Thumbsup
+        label: sddddddddddd
+        description: dasdasd
+      - icon: SocialEmoji
+        label: asdasda
+        description: sdasd
+      - icon: ChatApp
+        label: My feature label
+        description: My feature description
+    _template: featureList
 ---
+

@@ -1,6 +1,6 @@
 "use client"
 
-import { PageAndNavQuery, PageQuery } from "@/tina/__generated__/types"
+import { PageAndNavQuery } from "@/tina/__generated__/types"
 import { useTina } from "tinacms/dist/react"
 
 import { FeaturedReading } from "@/components/blog-list"
@@ -8,6 +8,7 @@ import { FeatureList } from "@/components/features"
 import { Footer } from "@/components/footer"
 import { SiteHeader } from "@/components/site-header"
 import { WelcomeHero } from "@/components/welcome-hero"
+import TodosList from "@/components/todos-list"
 
 export function PageComponent(props: {
   data: PageAndNavQuery
@@ -30,7 +31,11 @@ export function PageComponent(props: {
             return <FeatureList key={i} {...block} />
           }
           case 'PageBlocksFeaturedReading': {
+            // @ts-expect-error something went wrong
             return <FeaturedReading key={i} {...block} />
+          }
+          case 'PageBlocksTodosList': {
+            return <TodosList key={i} {...block} />
           }
         }
       })}

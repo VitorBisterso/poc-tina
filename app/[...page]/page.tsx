@@ -16,7 +16,7 @@ export default function GenericPage() {
             .queries
             .pageAndNav({ relativePath: `${pathname.replaceAll('/', '')}.md` })
             .then((result) => setPageDetails(result as any))
-            .catch(e => setHasError(true))
+            .catch(() => setHasError(true))
       }
 
       fetchPage()

@@ -131,6 +131,17 @@ export default defineConfig({
                   }
                 ]
               },
+              {
+                name: 'todosList',
+                label: 'TODOs list',
+                // entender a possibilidade de ocultar os "fields" na edição
+                fields: [
+                  {
+                    name: "title",
+                    type: "string",
+                  }
+                ]
+              }
             ],
           },
         ],

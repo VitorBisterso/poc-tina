@@ -15,5 +15,6 @@ blocks:
         label: para a home mesmo
         style: button
     _template: welcomeHero
+  - _template: todosList
 ---
 

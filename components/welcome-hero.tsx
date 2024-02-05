@@ -64,7 +64,7 @@ export function WelcomeHero(props: PageBlocksWelcomeHero) {
                     href={link?.link || ""}
                   >
                     <Button size="lg" variant={"ghost"}>
-                      Learn More
+                      {link.label}
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>

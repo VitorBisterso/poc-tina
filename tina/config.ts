@@ -27,7 +27,7 @@ export default defineConfig({
         format: "md",
         ui: {
           router: (props) => {
-            return "/"
+            return props.document._sys.breadcrumbs.join("/")
           },
         },
         fields: [

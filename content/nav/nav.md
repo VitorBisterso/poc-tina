@@ -4,7 +4,7 @@ links:
     link: /
   - label: Blog
     link: /blog
-  - label: asdasdasd
+  - label: Other link
     link: /asdasd
 ---
 

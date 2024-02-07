@@ -238,9 +238,141 @@ export default defineConfig({
               {
                 type: 'string',
                 name: 'link',
-                label: 'Link'
+                label: 'Link',
               }
             ]
+          },
+        ]
+      },
+      { 
+        name: 'theme',
+        label: 'Theme',
+        path: 'content/theme',
+        format: 'md',
+        ui: {
+          allowedActions: {
+            create: false,
+            delete: false,
+          },
+          global: true,
+        },
+        fields: [
+          {
+            name: 'defaultLogo',
+            label: 'Default Logo',
+            type: 'image',
+          },
+          {
+            name: 'favIcon',
+            label: 'Favicon',
+            type: 'image',
+          },
+          {
+            name: 'homePageBanner',
+            label: 'Home Page Banner',
+            type: 'image',
+          },
+          {
+            name: 'catalogBanner',
+            label: 'Catalog Banner',
+            type: 'image',
+          },
+          {
+            name: 'appsBanner',
+            label: 'Apps Banner',
+            type: 'image',
+          },
+          {
+            name: 'fontHeading',
+            label: 'Font for Headings',
+            type: 'string',
+            options: ["Roboto", "Nunito", "Inter"],
+          },
+          {
+            name: 'fontBody',
+            label: 'Font for Body',
+            type: 'string',
+            options: ["Roboto", "Nunito", "Inter"],
+          },
+          {
+            name: 'backgroundColorHeader',
+            label: 'Header Background Color',
+            type: 'string',
+            ui: {
+              component: 'color',
+              colorFormat: 'hex',
+              widget: 'sketch',
+            }
+          },
+          {
+            name: 'backgroundColorBody',
+            label: 'Body Background Color',
+            type: 'string',
+            ui: {
+              component: 'color',
+              colorFormat: 'hex',
+              widget: 'sketch',
+            }
+          },
+          {
+            name: 'backgroundColorFooter',
+            label: 'Footer Background Color',
+            type: 'string',
+            ui: {
+              component: 'color',
+              colorFormat: 'hex',
+              widget: 'sketch',
+            }
+          },
+          {
+            name: 'buttonColorPrimaryFill',
+            label: 'Primary Button Fill Color',
+            type: 'string',
+            ui: {
+              component: 'color',
+              colorFormat: 'hex',
+              widget: 'sketch',
+            }
+          },
+          {
+            name: 'buttonColorPrimaryText',
+            label: 'Primary Button Text Color',
+            type: 'string',
+            ui: {
+              component: 'color',
+              colorFormat: 'hex',
+              widget: 'sketch',
+            }
+          },
+          {
+            name: 'buttonColorSecondaryBorder',
+            label: 'Secondary Button Border Color',
+            type: 'string',
+            ui: {
+              component: 'color',
+              colorFormat: 'hex',
+              widget: 'sketch',
+            }
+          },
+          {
+            name: 'buttonColorSecondaryText',
+            label: 'Secondary Button Text Color',
+            type: 'string',
+            ui: {
+              component: 'color',
+              colorFormat: 'hex',
+              widget: 'sketch',
+            }
+          },
+          {
+            name: 'buttonColorTertiaryText',
+            label: 'Tertiary Button Text Color',
+            type: 'string',
+            ui: {
+              component: 'color',
+              colorFormat: 'hex',
+              widget: 'sketch',
+            }
           },
         ]
       },

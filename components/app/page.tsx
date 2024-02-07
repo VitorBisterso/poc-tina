@@ -1,6 +1,6 @@
 "use client"
 
-import { PageAndNavQuery } from "@/tina/__generated__/types"
+import { PageNavAndThemeQuery } from "@/tina/__generated__/types"
 import { useTina } from "tinacms/dist/react"
 
 import { FeaturedReading } from "@/components/blog-list"
@@ -11,7 +11,7 @@ import { WelcomeHero } from "@/components/welcome-hero"
 import TodosList from "@/components/todos-list"
 
 export function PageComponent(props: {
-  data: PageAndNavQuery
+  data: PageNavAndThemeQuery
   variables: {
     relativePath: string
   }
@@ -21,7 +21,7 @@ export function PageComponent(props: {
 
   return (
     <>
-      <SiteHeader {...data.nav} />
+      <SiteHeader nav={data.nav} theme={data.theme} />
       {data.page.blocks?.map((block, i) => {
         switch (block?.__typename) {
           case "PageBlocksWelcomeHero": {

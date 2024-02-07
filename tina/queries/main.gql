@@ -1,4 +1,4 @@
-query pageAndNav($relativePath: String!) {
+query pageNavAndTheme($relativePath: String!) {
   page(relativePath: $relativePath) {
     ... on Document {
       _sys {
@@ -27,6 +27,21 @@ query pageAndNav($relativePath: String!) {
       id
     }
     ...NavParts
+  }
+
+  theme(relativePath: "default-theme.md") {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ThemeParts
   }
 }
 
@@ -59,6 +74,21 @@ query postAndNav($relativePath: String!) {
       id
     }
     ...NavParts
+  }
+
+  theme(relativePath: "default-theme.md") {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ThemeParts
   }
 }
 
@@ -110,5 +140,20 @@ query postAndNavConnection($before: String, $after: String, $first: Float, $last
       id
     }
     ...NavParts
+  }
+
+  theme(relativePath: "default-theme.md") {
+    ... on Document {
+      _sys {
+        filename
+        basename
+        breadcrumbs
+        path
+        relativePath
+        extension
+      }
+      id
+    }
+    ...ThemeParts
   }
 }

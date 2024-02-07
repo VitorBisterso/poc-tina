@@ -14,7 +14,7 @@ export default function GenericPage() {
       const fetchPage = async () => {
          client
             .queries
-            .pageAndNav({ relativePath: `${pathname.replaceAll('/', '')}.md` })
+            .pageNavAndTheme({ relativePath: `${pathname.replaceAll('/', '')}.md` })
             .then((result) => setPageDetails(result as any))
             .catch(() => setHasError(true))
       }

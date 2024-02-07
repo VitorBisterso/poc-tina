@@ -14,7 +14,7 @@ export function BlogIndexPageComponent(props: {
   const { data } = useTina(props)
   return (
     <>
-      <SiteHeader {...data.nav} />
+      <SiteHeader nav={data.nav} theme={data.theme} />
       <div className="bg-muted">
         <div className="container flex flex-col gap-8 py-8">
           <BlogList {...data} />

@@ -20,7 +20,7 @@ export function BlogPageComponent(props: {
 
   return (
     <>
-      <SiteHeader {...data.nav} />
+      <SiteHeader nav={data.nav} theme={data.theme} />
       <div className="relative bg-muted">
         <div className="container relative z-10 flex flex-col py-8">
           <FeaturedReadingAlt post={data.post} />

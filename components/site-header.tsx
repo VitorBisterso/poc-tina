@@ -1,5 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu } from "lucide-react"
 
 import { Button, buttonVariants } from "@/components/ui/button"
@@ -9,35 +10,42 @@ import {
   DialogFooter,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { BasicIcons, Logo } from "@/components/icons"
+import { BasicIcons } from "@/components/icons"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { PageAndNavQuery } from "@/tina/__generated__/types"
+import { PageNavAndThemeQuery } from "@/tina/__generated__/types"
 import { tinaField } from "tinacms/dist/react"
 
-const links = [
-  { label: "Home", link: "/" },
-  { label: "Blog", link: "/blog" },
-]
 const social = [
   { handle: "llama-link", platform: "twitter" },
   { handle: "llama-link", platform: "github" },
 ]
 
-export function SiteHeader(props: PageAndNavQuery['nav']) {
+type Props = {
+  nav: PageNavAndThemeQuery['nav']
+  theme: PageNavAndThemeQuery['theme']
+}
+
+export function SiteHeader({ nav, theme }: Props) {
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-background">
+    <header className="sticky top-0 z-40 w-full border-b bg-background"  style={{ backgroundColor: theme.backgroundColorHeader || '' }}>
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
         <div className="flex items-center gap-6 md:gap-10">
           <Link
             href="/"
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100"
           >
-            <Logo className="h-5 w-5" />
+            <Image
+              data-tina-field={tinaField(theme, 'defaultLogo')}
+              width={150}
+              height={32}
+              style={{ maxWidth: 150, maxHeight: 32 }}
+              alt="Company Logo"
+              src={theme.defaultLogo || ''}
+            />
           </Link>
 
           <div className="hidden md:block">
             <ul className="flex items-center gap-3 p-6">
-              {props.links?.map((link) => {
+              {nav.links?.map((link) => {
                 return (
                   <li data-tina-field={link && tinaField(link, 'label')} key={link?.link} className="row-span-3">
                     <Link href={link?.link || ""}>
@@ -62,7 +70,7 @@ export function SiteHeader(props: PageAndNavQuery['nav']) {
               </Button>
             </DialogTrigger>
             <DialogContent className="flex flex-col justify-center py-12 sm:max-w-[425px]">
-              {props.links?.map((link) => {
+              {nav.links?.map((link) => {
                 return (
                   <Link key={link?.link} href={link?.link || ""}>
                     <Button variant="ghost" className="w-full text-lg">
